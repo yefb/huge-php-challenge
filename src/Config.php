@@ -4,7 +4,7 @@ class Config
 {
     public static function getDrawingStorageFile()
     {
-        $file = dirname(__FILE__) . "/.drawing";
+        $file = dirname(__FILE__) . "/storage/current_drawing";
 
         return $file;
     }

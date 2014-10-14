@@ -46,8 +46,6 @@ class BaseDrawer
         $filename = Config::getDrawingStorageFile();
 
         if (!file_exists($filename)) {
-            touch($filename);
-
             return null;
         }
 

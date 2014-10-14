@@ -13,6 +13,7 @@ use Symfony\Component\Console\Input\StringInput;
 
 // Setup the application registering the commands to use
 $app = new Application();
+$app->checkOrCreateStorageFile();
 $app->registerCommands();
 $app->setAutoExit(false);
 
