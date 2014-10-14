@@ -2,8 +2,19 @@
 
 use Symfony\Component\Console\Input\InputArgument;
 
+/**
+ * Class RectangleCommand
+ * @package Challenge\Commands
+ *
+ * Command in charge of drawing rectangles
+ *
+ * Usage: R x1 y1 x2 y2
+ */
 class RectangleCommand extends LineCommand
 {
+    /**
+     * Set the parameters to use when calling the command
+     */
     protected function configure()
     {
         $this

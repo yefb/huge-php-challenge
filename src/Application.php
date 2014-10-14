@@ -12,12 +12,27 @@ use Challenge\Drawers\LineDrawer;
 use Challenge\Drawers\RectangleDrawer;
 use Challenge\Drawers\BucketFillDrawer;
 
+/**
+ * Class Application
+ * @package Challenge
+ *
+ * Application setup class.
+ */
 class Application extends BaseApplication
 {
+    /**
+     * @var array
+     *
+     * When the user enters one of these commands, it will be considered
+     * as an exit command
+     */
     public $exitCommands = [
         'q', 'exit', 'quit'
     ];
 
+    /**
+     * Register all the available commands into the app
+     */
     public function registerCommands()
     {
         $this->add(new CanvasCommand(new CanvasDrawer()));
@@ -26,6 +41,13 @@ class Application extends BaseApplication
         $this->add(new BucketFillCommand(new BucketFillDrawer()));
     }
 
+    /**
+     * @throws \Exception if the file cannot be written
+     *
+     * Check if the current drawing file exists
+     * -> If it does not exist, the create it
+     * -> If it does exist, then empty it
+     */
     public function checkOrCreateStorageFile()
     {
         $storageFile = Config::getDrawingStorageFile();
