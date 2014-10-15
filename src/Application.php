@@ -54,7 +54,7 @@ class Application extends BaseApplication
 
         if (!file_exists($storageFile)) {
 
-            if(!touch($storageFile)){
+            if (!touch($storageFile)) {
                 throw new \Exception('Could not create storage file. Does the storage folder have writing permissions?');
             }
         } else {
