@@ -147,7 +147,7 @@ class LineDrawer extends BaseDrawer
      * The line starts in the coordinates ($startingX, $yAxis)
      * ant ends in ($endingY, $yAxis)
      */
-    protected function drawHorizontalLine($yAxis, $startingX, $endingX)
+    public function drawHorizontalLine($yAxis, $startingX, $endingX)
     {
         foreach ($this->currentDrawing[$yAxis] as $index => $pixel) {
             if ($index >= $startingX && $index <= $endingX) {
@@ -165,7 +165,7 @@ class LineDrawer extends BaseDrawer
      * The line starts in the coordinates ($xAxis, $startingY)
      * ant ends in ($xAxis, $endingY)
      */
-    protected function drawVerticalLine($xAxis, $startingY, $endingY)
+    public function drawVerticalLine($xAxis, $startingY, $endingY)
     {
         for ($i = $startingY; $i <= $endingY; $i++) {
             $this->currentDrawing[$i][$xAxis] = $this->lineChar;
