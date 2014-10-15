@@ -42,3 +42,10 @@ php canvas.php
 ```
 ./canvas.php
 ```
+
+Tests
+==================
+** This app includes unit tests for all the drawers
+```
+phpunit
+```
